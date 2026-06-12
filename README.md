@@ -21,3 +21,12 @@ This project analyses bandgap properties of materials including Cobalt Tungstate
 ## What I learned
 How to visualise scientific data using Python — connecting my lab research
 skills to programming.
+
+## Version 2 — Upgraded Analysis
+- Expanded from 4 to 10 materials
+- Colour coded by material type (Semiconductor vs Insulator)
+- Sorted by bandgap value
+- Added real-world applications for each material
+- Statistical summary: Average bandgap = 2.69 eV
+
+![Bandgap Chart](bandgap_analysis_v2.png)
