@@ -30,3 +30,12 @@ skills to programming.
 - Statistical summary: Average bandgap = 2.69 eV
 
 ![Bandgap Chart](bandgap_analysis_v2.png)
+
+
+## Chart 2 — Applications by Bandgap (Scatter Plot)
+- Visualises which bandgap range suits which application
+- Key finding: Materials below 2.0 eV → Solar cells & Batteries
+- Key finding: Materials above 3.0 eV → LEDs & Phosphors
+- Cobalt Tungstate (2.8 eV) sits in the Photocatalysis range ✓
+
+![Scatter Plot](bandgap_vs_application.png)
