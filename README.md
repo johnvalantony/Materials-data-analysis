@@ -39,3 +39,16 @@ skills to programming.
 - Cobalt Tungstate (2.8 eV) sits in the Photocatalysis range ✓
 
 ![Scatter Plot](bandgap_vs_application.png)
+
+## Chart 3 — ML Prediction Zones
+Built a Decision Tree ML model that predicts material applications
+from bandgap values. Model trained using scikit-learn.
+
+Key zones identified by the model:
+- 0.5–1.8 eV → Solar cells
+- 1.8–2.3 eV → Batteries  
+- 2.3–3.3 eV → Photocatalysis (Cobalt Tungstate confirmed ✓)
+- 3.3–3.5 eV → LEDs
+- 3.5+ eV → Gas sensors
+
+![ML Prediction Zones](ml_prediction_zones.png)
