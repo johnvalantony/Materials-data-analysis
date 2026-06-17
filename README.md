@@ -1,60 +1,84 @@
-# Materials Bandgap Analysis
+# 🔬 Materials Bandgap Analysis & ML Predictor
 
-A Python data analysis project comparing bandgap values of key materials.
+A data science project analyzing material bandgap properties and predicting 
+real-world applications using machine learning — built by a Physics graduate 
+applying lab research skills to Python and AI.
 
-## About
-I am John Valan Tony, M.Sc Physics graduate from Loyola College, Chennai.
-This project analyses bandgap properties of materials including Cobalt Tungstate
-— the material I studied in my M.Sc thesis.
+**Author:** John Valan Tony A | M.Sc Physics, Loyola College, Chennai
 
-## Materials Analysed
-- Cobalt Tungstate (2.8 eV)
-- Silicon (1.1 eV)
-- Titanium Dioxide (3.2 eV)
-- Zinc Oxide (3.4 eV)
-
-## Tools Used
-- Python
-- Matplotlib
-- Google Colab
-
-## What I learned
-How to visualise scientific data using Python — connecting my lab research
-skills to programming.
-
-## Version 2 — Upgraded Analysis
-- Expanded from 4 to 10 materials
-- Colour coded by material type (Semiconductor vs Insulator)
-- Sorted by bandgap value
-- Added real-world applications for each material
-- Statistical summary: Average bandgap = 2.69 eV
-
-![Bandgap Chart](bandgap_analysis_v2.png)
-
-
-## Chart 2 — Applications by Bandgap (Scatter Plot)
-- Visualises which bandgap range suits which application
-- Key finding: Materials below 2.0 eV → Solar cells & Batteries
-- Key finding: Materials above 3.0 eV → LEDs & Phosphors
-- Cobalt Tungstate (2.8 eV) sits in the Photocatalysis range ✓
-
-![Scatter Plot](bandgap_vs_application.png)
-
-## Chart 3 — ML Prediction Zones
-Built a Decision Tree ML model that predicts material applications
-from bandgap values. Model trained using scikit-learn.
-
-Key zones identified by the model:
-- 0.5–1.8 eV → Solar cells
-- 1.8–2.3 eV → Batteries  
-- 2.3–3.3 eV → Photocatalysis (Cobalt Tungstate confirmed ✓)
-- 3.3–3.5 eV → LEDs
-- 3.5+ eV → Gas sensors
-
-![ML Prediction Zones](ml_prediction_zones.png)
+---
 
 ## 🚀 Live Demo
+
 **[Try the Materials Application Predictor →](https://johnvalantony-materials-application-predictor.hf.space)**
 
-An interactive web app where you input a bandgap value and get a 
-real-time ML prediction of the material's best application.
+Move the slider to input a bandgap value (eV) and instantly see the ML 
+model's predicted application — Solar cells, LEDs, Photocatalysis, Batteries, 
+Phosphors, or Gas sensors.
+
+---
+
+## 📋 About This Project
+
+During my M.Sc Physics, I worked on synthesizing and characterizing Cobalt 
+Tungstate using XRD, FTIR, UV-Vis, and SEM techniques. This project takes 
+that materials science foundation and combines it with Python, data 
+analysis, and machine learning to predict material applications from 
+bandgap values.
+
+---
+
+## 📊 Analysis & Visualizations
+
+### 1. Bandgap Comparison Across 10 Materials
+![Bandgap Chart](bandgap_analysis_v2.png)
+
+Compared bandgap values of 10 key materials, color-coded by type 
+(Semiconductor vs Insulator). Average bandgap: 2.69 eV.
+
+### 2. Material Applications by Bandgap Range
+![Scatter Plot](bandgap_vs_application.png)
+
+Mapped which bandgap ranges correspond to which real-world applications — 
+materials below 2.0 eV suit solar cells/batteries, while materials above 
+3.0 eV suit LEDs/phosphors.
+
+### 3. Machine Learning Prediction Zones
+![ML Zones](ml_prediction_zones.png)
+
+Trained a Decision Tree Classifier on the dataset to automatically identify 
+bandgap "zones" for each application — without being told the rules manually.
+
+---
+
+## 🛠️ Tools & Technologies
+
+- **Python** — core programming language
+- **Pandas** — data manipulation and analysis
+- **Matplotlib** — data visualization
+- **Scikit-learn** — machine learning (Decision Tree Classifier)
+- **Gradio** — interactive web app interface
+- **Hugging Face Spaces** — live model deployment
+- **Google Colab** — development environment
+
+---
+
+## 📁 Repository Contents
+
+| File | Description |
+|---|---|
+| `bandgap_analysis.ipynb` | Initial 4-material analysis |
+| `bandgap_analysis_v2.png` | 10-material comparison chart |
+| `bandgap_vs_application.ipynb` | Scatter plot analysis notebook |
+| `ml_prediction_zones.ipynb` | ML model training and visualization |
+| `app.py` | Gradio web app source code |
+| `requirements.txt` | Python dependencies |
+
+---
+
+## 💡 What I Learned
+
+This project taught me how to take real scientific data and apply 
+programming and machine learning to extract patterns and build a usable 
+tool — bridging my background in experimental physics with practical 
+data science skills.
