@@ -52,3 +52,9 @@ Key zones identified by the model:
 - 3.5+ eV → Gas sensors
 
 ![ML Prediction Zones](ml_prediction_zones.png)
+
+## 🚀 Live Demo
+**[Try the Materials Application Predictor →](https://yn0ti-materials-application-predictor.hf.space)**
+
+An interactive web app where you input a bandgap value and get a 
+real-time ML prediction of the material's best application.
