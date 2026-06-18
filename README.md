@@ -82,3 +82,10 @@ This project taught me how to take real scientific data and apply
 programming and machine learning to extract patterns and build a usable 
 tool — bridging my background in experimental physics with practical 
 data science skills.
+
+## Model Note
+The classifier achieves 100% accuracy because the categories are 
+threshold-defined directly from bandgap value. This confirms the 
+model correctly learned the rule, but real-world prediction tasks 
+(e.g. predicting *application* from *structure*, not from bandgap 
+itself) would be more meaningful next steps.
