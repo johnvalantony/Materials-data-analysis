@@ -89,3 +89,24 @@ threshold-defined directly from bandgap value. This confirms the
 model correctly learned the rule, but real-world prediction tasks 
 (e.g. predicting *application* from *structure*, not from bandgap 
 itself) would be more meaningful next steps.
+
+## Chart 4 — Real Materials Database Analysis
+
+Connected to the Materials Project API (materialsproject.org) to pull 
+real computed bandgap data for 50 materials, replacing the earlier 
+hand-typed dataset.
+
+![Real Materials Distribution](real_materials_distribution.png)
+
+### Key Finding
+Trained a classifier to predict whether a material behaves as a metal, 
+based purely on its bandgap value. Initial attempt gave a misleading 
+100% accuracy because the sample only contained non-metals (bandgap > 0). 
+After re-querying to include true metals (bandgap = 0), the model still 
+achieved 100% — but this time the result is physically meaningful: a 
+bandgap of exactly 0 eV is, by definition, characteristic of metallic 
+behavior. The small test set (1 non-metal sample) means this result 
+should be validated on a larger, more balanced dataset before drawing 
+strong conclusions.
+
+**Tools added:** `mp-api` (Materials Project API client)
