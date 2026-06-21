@@ -110,3 +110,37 @@ should be validated on a larger, more balanced dataset before drawing
 strong conclusions.
 
 **Tools added:** `mp-api` (Materials Project API client)
+
+## Project 2 — CoWO₄ Substitution Screening
+
+Applied systematic element substitution to my own M.Sc thesis material 
+(Cobalt Tungstate, CoWO₄) to explore how changing the metal cation 
+affects electronic and thermodynamic properties — a simplified version 
+of real materials discovery screening.
+
+### Method
+1. Verified CoWO₄ exists in the Materials Project database (2 polymorphs found; 
+   the most stable, mp-19092, has Energy Above Hull = 0 eV/atom)
+2. Substituted Cobalt with 5 chemically similar transition/alkaline earth 
+   metals (Ni, Fe, Mn, Zn, Mg) and queried the database for each resulting formula
+3. Substituted Tungsten with 5 alternatives (Mo, Cr, V, Ti, S) and repeated the search
+4. Compared bandgap, stability (energy above hull), and formation energy across all 11 compounds
+
+![Bandgap Comparison](substitution_bandgap.png)
+![Stability vs Bandgap](substitution_scatter.png)
+
+### Key Findings
+- **CoWO₄ and CoMoO₄ are both metals (0 eV bandgap)** — Cobalt paired with 
+  either Tungsten or Molybdenum produces metallic behavior, while every 
+  other substitution opens a real bandgap (0.51–3.68 eV)
+- **CoTiO₄ does not exist in the database** — a genuine gap, flagged as a 
+  candidate for future DFT calculation or experimental study rather than 
+  a confirmed novel material
+- **CoVO₄ is the least stable candidate** (Energy Above Hull = 0.066 eV/atom), 
+  despite a usable bandgap (1.47 eV) — worth deprioritizing experimentally 
+  compared to the other stable candidates
+- **MgWO₄ has both the widest bandgap (3.68 eV) and most favorable formation 
+  energy (-2.56 eV/atom)** among all substitutes tested — the most promising 
+  candidate for wide-bandgap applications if pursuing this substitution family
+
+**Tools used:** Materials Project API formula search, pandas, matplotlib
