@@ -178,7 +178,7 @@ Material ID instead.
 | 2. Better algorithm | 30,000 materials, XGBoost | 75.7% (±4.25%) | Real improvement (+3.7pp) — algorithm choice mattered |
 | 3. Feature selection | Top 60 of 137 features, XGBoost | 76.3% (±3.81%) | Small further gain, with lower variance |
 
-(https://github.com/johnvalantony/Materials-data-analysis/blob/main/ml_investigation_journey.png)
+!
 
 ### Key Findings
 - **Scaling data 10x did not improve performance** — the model had already 
