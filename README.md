@@ -146,7 +146,7 @@ of real materials discovery screening.
 **Tools used:** Materials Project API formula search, pandas, matplotlib
 
 ## Project 3 — Materials Stability Prediction: A Systematic ML Investigation
-
+![Materials_Stability_Prediction.ipynb](ml_investigation_journey.png)
 Investigated which factors actually improve prediction of material stability 
 (thermodynamic stability, defined as Energy Above Hull ≤ 0.05 eV/atom), 
 testing three independent hypotheses on the same problem, one variable at a time.
