@@ -196,6 +196,47 @@ reproducible comparisons rather than a single optimized number.
 **Tools used:** `matminer` (Magpie composition featurization), `xgboost`
 
 ---
+## 🧰 Project 4 — Materials Discovery Toolkit (Live Two-Tab App)
+
+**[Try the Materials Discovery Toolkit →](https://huggingface.co/spaces/JOHNVALANTONY/materials-discovery-toolkit)**
+
+Took the modeling work from Project 3 and the substitution screening from
+Project 2 and combined them into a single, live, two-tab application —
+moving from one-off Colab analysis to a real, reusable tool.
+
+### Tab 1 — Stability Predictor
+Enter any chemical formula and get a live stability prediction, generated
+entirely from chemistry — no database lookup involved. Under the hood, the
+app uses `matminer` to compute 132 Magpie composition features from the
+typed formula in real time, then feeds them into a trained XGBoost model.
+
+This is a deliberately chemistry-only model (no bandgap or formation energy
+inputs), which makes it slightly less accurate than the combined model from
+Project 3, but means it can evaluate **any** formula — including ones that
+don't exist in any database yet, not just known materials.
+
+**Honest limitation:** because structural data is excluded, the model can
+disagree with the database's own verdict. For example, the database lists
+the most stable polymorph of CoWO₄ (this project's own thesis material) as
+perfectly stable (Energy Above Hull = 0), but the chemistry-only model
+predicts it as "likely unstable" at 75.6% confidence. This is a real,
+expected trade-off, not a bug — and a useful illustration of why the
+Project 3 investigation found structural features so important.
+
+### Tab 2 — Substitution Explorer
+Automates the manual CoWO₄ substitution screening from Project 2. Enter a
+known formula, and the app substitutes a recognized element with
+chemically similar alternatives, then checks each resulting formula
+directly against the live Materials Project database — showing bandgap,
+stability, and formation energy for every match found (and flagging any
+formula that doesn't exist yet as a genuine gap). Requires the user's own
+free Materials Project API key.
+
+### Tech stack
+Gradio (two-tab `Blocks` interface), Hugging Face Spaces (deployment),
+`matminer` (live composition featurization), `joblib` (model serialization),
+Materials Project API (`mp-api`)
+
 
 ## 🛠️ Tools & Technologies (full stack across all projects)
 
