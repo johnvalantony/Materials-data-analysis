@@ -246,8 +246,11 @@ Materials Project API (`mp-api`)
 - **Scikit-learn** — machine learning (Decision Trees, Random Forest)
 - **XGBoost** — gradient boosting classifier
 - **Matminer / Pymatgen** — composition-based materials featurization
-- **Gradio** — interactive web app interface
+- **Joblib** — model serialization for deployment
+- **Gradio** — interactive web app interface (single-tab and multi-tab apps)
 - **Hugging Face Spaces** — live model deployment
+  - [Bandgap Application Predictor](https://johnvalantony-materials-application-predictor.hf.space)
+  - [Materials Discovery Toolkit](https://huggingface.co/spaces/JOHNVALANTONY/materials-discovery-toolkit)
 - **Materials Project API (`mp-api`)** — real scientific database access
 - **Google Colab** — development environment
 
