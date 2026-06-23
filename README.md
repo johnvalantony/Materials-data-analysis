@@ -177,7 +177,9 @@ Material ID instead.
 | 1. More data | 30,000 materials, Random Forest | 72.0% (±2.98%) | No improvement — data quantity was not the bottleneck |
 | 2. Better algorithm | 30,000 materials, XGBoost | 75.7% (±4.25%) | Real improvement (+3.7pp) — algorithm choice mattered |
 | 3. Feature selection | Top 60 of 137 features, XGBoost | 76.3% (±3.81%) | Small further gain, with lower variance |
-ml_investigation_journey.png
+
+(https://github.com/johnvalantony/Materials-data-analysis/blob/main/ml_investigation_journey.png)
+
 ### Key Findings
 - **Scaling data 10x did not improve performance** — the model had already 
   learned what it could learn from these features at 3,000 samples
