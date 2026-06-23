@@ -144,3 +144,53 @@ of real materials discovery screening.
   candidate for wide-bandgap applications if pursuing this substitution family
 
 **Tools used:** Materials Project API formula search, pandas, matplotlib
+
+## Project 3 — Materials Stability Prediction: A Systematic ML Investigation
+
+Investigated which factors actually improve prediction of material stability 
+(thermodynamic stability, defined as Energy Above Hull ≤ 0.05 eV/atom), 
+testing three independent hypotheses on the same problem, one variable at a time.
+
+### Setup
+- **Data:** Up to 30,000 real materials from the Materials Project API
+- **Features:** Structural properties (density, volume, bandgap, formation energy) 
+  combined with 132 composition-derived "Magpie" chemistry features 
+  (via `matminer`) — average electronegativity, melting point statistics, 
+  valence electron counts, etc., computed purely from chemical formula
+- **Target:** Binary stability classification
+- **Evaluation:** 5-fold cross-validation (not single-split accuracy) for 
+  reliable, trustworthy comparisons
+
+### Data integrity check
+An early version of this pipeline merged datasets on chemical formula, which 
+silently inflated 3,000 materials into 18,522 rows due to duplicate formulas 
+(polymorphs — the same formula can have multiple stable structures, as seen 
+directly in this project's earlier CoWO₄ case study). This was caught by 
+sanity-checking row counts after merging, and fixed by merging on the unique 
+Material ID instead.
+
+### Three experiments, one variable at a time
+
+| Experiment | Change | Cross-Val Accuracy | Conclusion |
+|---|---|---|---|
+| Baseline | 3,000 materials, Random Forest | 73.2% (±3.17%) | — |
+| 1. More data | 30,000 materials, Random Forest | 72.0% (±2.98%) | No improvement — data quantity was not the bottleneck |
+| 2. Better algorithm | 30,000 materials, XGBoost | 75.7% (±4.25%) | Real improvement (+3.7pp) — algorithm choice mattered |
+| 3. Feature selection | Top 60 of 137 features, XGBoost | 76.3% (±3.81%) | Small further gain, with lower variance |
+
+### Key Findings
+- **Scaling data 10x did not improve performance** — the model had already 
+  learned what it could learn from these features at 3,000 samples
+- **Switching from Random Forest to XGBoost gave the largest single gain**, 
+  confirming the bottleneck was partly algorithmic, not data volume
+- **The single most important feature was minimum melting point** of 
+  constituent elements — a physically interpretable result, since melting 
+  point reflects bond strength, which directly relates to structural stability
+- **Bottom 50 of 137 features contributed only 11% of total model importance** 
+  combined — removing them slightly improved both accuracy and reliability
+
+This investigation reflects how real ML model development works: testing 
+hypotheses systematically, validating data integrity, and reporting honest, 
+reproducible comparisons rather than a single optimized number.
+
+**Tools added:** `matminer` (Magpie composition featurization), `xgboost`
