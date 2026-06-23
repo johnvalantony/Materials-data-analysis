@@ -267,9 +267,13 @@ Materials Project API (`mp-api`)
 | `real_materials_distribution.ipynb` / `.png` | Materials Project API integration |
 | `feature_importance.ipynb` / `.png` | Random Forest feature importance |
 | `substitution_bandgap.png` / `substitution_scatter.png` | CoWO₄ substitution screening |
-| `ml_investigation_journey.png` | Stability prediction ML investigation |
-| `app.py` | Gradio web app source code |
-| `requirements.txt` | Python dependencies |
+| `Materials_Stability_Prediction.ipynb` | Full ML investigation (data scale, algorithm, feature selection) |
+| `ml_investigation_journey.png` | Stability prediction ML investigation chart |
+| `app.py` | Gradio source code — Project 4 two-tab Materials Discovery Toolkit |
+| `requirements.txt` | Python dependencies for the deployed app |
+| `stability_model_app.pkl` | Trained XGBoost model (chemistry-only) for live stability prediction |
+| `model_features_app.pkl` | Ordered list of 132 Magpie features the model expects |
+
 
 ---
 
